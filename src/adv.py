@@ -58,6 +58,17 @@ def next_room(dir, current_room):
 # If the user enters "q", quit the game.
 
 done = False
+help_string = """
+Commands:
+    n, e, s, w - to move in a direction specified
+    quit - to quit the game
+    help - to view these commands again
+"""
+print(f"""
+Welcome {player.name}!
+{help_string}
+""")
 
-while !done:
-    
+while not done:
+    player.current_room.print()
+    command = input("Where would you like to go?")
