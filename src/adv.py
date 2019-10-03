@@ -23,6 +23,9 @@ room = {
 
     'treasure': Room("Treasure Chamber",
                     "You've found the long-lost treasure chamber! Sadly, it has already been completely emptied by earlier adventurers. The only exit is to the south."),
+
+    'sewer': Room("Sewer Entrance",
+                    "You've found a cover to an old sewer entrance, but the path looks dangerous"),
 }
 
 
@@ -33,6 +36,8 @@ room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
 room['foyer'].e_to = room['narrow']
 room['overlook'].s_to = room['foyer']
+room['overlook'].e_to = room['sewer']
+room['sewer'].w_to = room['overlook']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
