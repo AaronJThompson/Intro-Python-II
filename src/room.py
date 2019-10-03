@@ -34,7 +34,7 @@ class Room:
       return False
 
   def __str__(self):
-    return f"\n{self.name}\n{self.description}\n "
+    return f"\n{self.name}\n{self.description}\nItems\n{'\n'.join(self.items)}"
 
   def __center_wrap__(self, text, cwidth=80, **kw):
     lines = textwrap.wrap(text, **kw)
