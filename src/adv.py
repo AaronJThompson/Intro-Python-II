@@ -44,7 +44,13 @@ def next_room(dir, current_room):
     direction = dir + "_to"
     return getattr(current_room, direction)
 
-
+def move_player(player, dir):
+    room = next_room(dir, player.current_room)
+    if room:
+        player.current_room = room
+        return True
+    else:
+        return False
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
