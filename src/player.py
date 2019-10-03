@@ -2,6 +2,12 @@
 # currently.
 
 class Player:
-  def __init__(self, name, current_room):
+  def __init__(self, name, current_room, inventory = []):
     self.current_room = current_room
     self.name = name
+    self.inventory = inventory
+
+  def add_item(self, item):
+    self.inventory.append(item)
+    item.on_take()
+    return self.inventory
