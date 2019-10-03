@@ -79,7 +79,7 @@ def center_wrap(text, cwidth=80, **kw):
     lines = textwrap.wrap(text, **kw)
     return "\n".join(line.center(cwidth) for line in lines)
 def center_print(obj):
-    lines = obj.__str__().splitlines()
+    lines = str(obj).splitlines()
     for line in lines:
         print(center_wrap(line, cwidth=80, width=50))
 
