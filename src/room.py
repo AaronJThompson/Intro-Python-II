@@ -13,3 +13,8 @@ class Room:
 
   def __str__(self):
     return f"{self.name}\n{self.description}"
+
+  def print(self):
+    text = self.__str__()
+    for line in textwrap.wrap(text, width=50):
+      print(line.center(80))
