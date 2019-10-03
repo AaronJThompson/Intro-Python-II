@@ -117,6 +117,9 @@ while not done:
         if not item:
             print(f"You don't have a {commands[1]} on you")
             continue
+    elif commands[0] in ["i", "inventory"]:
+        center_print(player.inventory_string())
+        continue
     elif commands[0] == "quit":
         done = True
         continue
