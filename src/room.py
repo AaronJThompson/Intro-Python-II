@@ -20,6 +20,19 @@ class Room:
     self.items.append(item)
     return self.items
 
+  def remove_item(self, name):
+    item = None
+    item_index = None
+    for idx, i in enumerate(self.items):
+      if i.name == name:
+        item = i
+        item_index = idx
+        break
+    if item:
+      return self.items.pop(item_index)
+    else:
+      return False
+
   def __str__(self):
     return f"\n{self.name}\n{self.description}\n "
 
