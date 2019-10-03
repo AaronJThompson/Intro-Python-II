@@ -12,7 +12,7 @@ class Room:
     self.w_to = None
 
   def __str__(self):
-    return f"{self.name}\n{self.description}\n "
+    return f"\n{self.name}\n{self.description}\n "
 
   def __center_wrap__(self, text, cwidth=80, **kw):
     lines = textwrap.wrap(text, **kw)
