@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from item import Item
+import textwrap
 # Declare all the rooms
 
 room = {
@@ -74,6 +75,14 @@ def move_player(ply, dir):
 #
 # If the user enters "q", quit the game.
 
+def center_wrap(text, cwidth=80, **kw):
+    lines = textwrap.wrap(text, **kw)
+    return "\n".join(line.center(cwidth) for line in lines)
+def center_print(obj):
+    lines = obj.__str__().splitlines()
+    for line in lines:
+        print(center_wrap(line, cwidth=80, width=50))
+
 done = False
 help_string = """
 Commands:
@@ -90,7 +99,7 @@ Welcome {player.name}!
 """)
 
 while not done:
-    player.current_room.print()
+    center_print(player.current_room)
     commands = input("Where would you like to go? ").strip().lower().split(" ")
     if commands[0] in ["n", "e", "s", "w"]:
         if move_player(player, commands[0]):
