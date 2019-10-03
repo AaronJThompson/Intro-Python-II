@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -37,6 +37,9 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
+player = Player(input("What's your name? "), room['outside'])
+
+
 def next_room(dir, current_room):
     direction = dir + "_to"
     return getattr(current_room, direction)
@@ -53,3 +56,8 @@ def next_room(dir, current_room):
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+done = False
+
+while !done:
+    
