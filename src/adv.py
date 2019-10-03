@@ -86,17 +86,17 @@ Welcome {player.name}!
 
 while not done:
     player.current_room.print()
-    command = input("Where would you like to go? ").strip().lower()
-    if command in ["n", "e", "s", "w"]:
-        if move_player(player, command):
+    commands = input("Where would you like to go? ").strip().lower().split(" ")
+    if commands[0] in ["n", "e", "s", "w"]:
+        if move_player(player, commands[0]):
             continue
         else:
             print("There is no room that way")
             continue
-    if command == "quit":
+    if commands[0] == "quit":
         done = True
         continue
-    if command == "help":
+    if commands[0] == "help":
         print(help_string)
         continue
     else:
