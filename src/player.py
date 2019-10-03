@@ -18,7 +18,7 @@ class Player:
     return self.inventory
 
   def pickup_item(self, name):
-    item = current_room.pop_item(name)
+    item = self.current_room.pop_item(name)
     if item:
       self.__add_item__(item)
       return item
