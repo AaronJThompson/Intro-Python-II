@@ -44,6 +44,7 @@ def next_room(dir, current_room):
     direction = dir + "_to"
     return getattr(current_room, direction)
 
+
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
@@ -71,4 +72,5 @@ Welcome {player.name}!
 
 while not done:
     player.current_room.print()
-    command = input("Where would you like to go?")
+    command = input("Where would you like to go?").strip().lower()
+    if command in ["n", "e", "s", "w"]:
