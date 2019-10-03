@@ -7,12 +7,12 @@ class Player:
     self.name = name
     self.inventory = inventory
 
-  def add_item(self, item):
+  def __add_item__(self, item):
     self.inventory.append(item)
     item.on_take()
     return self.inventory
 
-  def remove_item(self, idx):
+  def __remove_item__(self, idx):
     item = self.inventory.pop(idx)
     item.on_drop()
     return self.inventory
