@@ -44,10 +44,10 @@ def next_room(dir, current_room):
     direction = dir + "_to"
     return getattr(current_room, direction)
 
-def move_player(player, dir):
-    room = next_room(dir, player.current_room)
+def move_player(ply, dir):
+    room = next_room(dir, ply.current_room)
     if room:
-        player.current_room = room
+        ply.current_room = room
         return True
     else:
         return False
@@ -80,3 +80,17 @@ while not done:
     player.current_room.print()
     command = input("Where would you like to go?").strip().lower()
     if command in ["n", "e", "s", "w"]:
+        if move_player(player, command):
+            continue
+        else:
+            print("There is no room that way")
+            continue
+    if command == "quit":
+        done = True
+        continue
+    if command == "help":
+        print(help_string)
+        continue
+    else:
+        print("Invalid command")
+        continue
