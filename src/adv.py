@@ -39,6 +39,12 @@ room['treasure'].s_to = room['narrow']
 
 player = Player(input("What's your name? "), room['outside'])
 
+full_direction = {
+    "n": "North",
+    "e": "East",
+    "s": "South",
+    "w": "West",
+}
 
 def next_room(dir, current_room):
     direction = dir + "_to"
@@ -48,6 +54,7 @@ def move_player(ply, dir):
     room = next_room(dir, ply.current_room)
     if room:
         ply.current_room = room
+        print(f"You move {full_direction[dir]} and find yourself somewhere new")
         return True
     else:
         return False
@@ -78,7 +85,7 @@ Welcome {player.name}!
 
 while not done:
     player.current_room.print()
-    command = input("Where would you like to go?").strip().lower()
+    command = input("Where would you like to go? ").strip().lower()
     if command in ["n", "e", "s", "w"]:
         if move_player(player, command):
             continue
