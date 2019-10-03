@@ -37,3 +37,7 @@ class Player:
       return self.__remove_item__(item_index)
     else:
       return False
+
+  def inventory_string(self):
+    return "\n".join(str(item) for item in self.inventory)
+    
