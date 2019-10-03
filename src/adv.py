@@ -98,6 +98,11 @@ while not done:
         if not inv:
             print(f"You tried to find a {commands[1]}, but there was none to be found")
             continue
+    if commands[0] == "drop":
+        item = player.drop_item(commands[1])
+        if not item:
+            print(f"You don't have a {commands[1]} on you")
+            continue
     if commands[0] == "quit":
         done = True
         continue
