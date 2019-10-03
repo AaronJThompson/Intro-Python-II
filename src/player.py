@@ -11,3 +11,8 @@ class Player:
     self.inventory.append(item)
     item.on_take()
     return self.inventory
+
+  def remove_item(self, idx):
+    item = self.inventory.pop(idx)
+    item.on_drop()
+    return self.inventory
