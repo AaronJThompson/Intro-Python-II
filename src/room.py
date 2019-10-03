@@ -34,7 +34,7 @@ class Room:
       return False
 
   def __item_string__(self):
-    return "\n".join(self.items)
+    return "\n".join(str(item) for item in self.items)
 
   def __str__(self):
     return f"\n{self.name}\n{self.description}\nItems\n{self.__item_string__()}"

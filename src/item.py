@@ -5,7 +5,7 @@ class Item:
     self.description = description
 
   def __str__(self):
-    return f"\n{self.name}\n{self.description}\n "
+    return f"{self.name}: {self.description}"
 
   def on_take(self):
     print(f"You have picked up a {self.name}")
