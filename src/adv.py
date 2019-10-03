@@ -98,20 +98,20 @@ while not done:
         else:
             print("There is no room that way")
             continue
-    if commands[0] in ["take", "give"]:
+    elif commands[0] in ["take", "give"]:
         inv = player.pickup_item(commands[1])
         if not inv:
             print(f"You tried to find a {commands[1]}, but there was none to be found")
             continue
-    if commands[0] == "drop":
+    elif commands[0] == "drop":
         item = player.drop_item(commands[1])
         if not item:
             print(f"You don't have a {commands[1]} on you")
             continue
-    if commands[0] == "quit":
+    elif commands[0] == "quit":
         done = True
         continue
-    if commands[0] == "help":
+    elif commands[0] == "help":
         print(help_string)
         continue
     else:
