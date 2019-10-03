@@ -28,7 +28,7 @@ class Player:
     item = None
     item_index = None
     for idx, i in enumerate(self.inventory):
-      if i.name == name:
+      if i.name.lower() == name:
         item = i
         item_index = idx
         break

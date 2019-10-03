@@ -24,7 +24,7 @@ class Room:
     item = None
     item_index = None
     for idx, i in enumerate(self.items):
-      if i.name == name:
+      if i.name.lower() == name:
         item = i
         item_index = idx
         break
