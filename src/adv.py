@@ -93,6 +93,11 @@ while not done:
         else:
             print("There is no room that way")
             continue
+    if commands[0] in ["take", "give"]:
+        inv = player.pickup_item(commands[1])
+        if not inv:
+            print(f"You tried to find a {commands[1]}, but there was none to be found")
+            continue
     if commands[0] == "quit":
         done = True
         continue
