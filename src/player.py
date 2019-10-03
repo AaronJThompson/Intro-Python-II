@@ -18,7 +18,7 @@ class Player:
     return self.inventory
 
   def pickup_item(self, name):
-    item = self.current_room.pop_item(name)
+    item = self.current_room.remove_item(name)
     if item:
       return self.__add_item__(item)
     else:
@@ -33,7 +33,7 @@ class Player:
         item_index = idx
         break
     if item:
-      self.current_room.push_item(item)
+      self.current_room.add_item(item)
       return self.__remove_item__(item_index)
     else:
       return False
