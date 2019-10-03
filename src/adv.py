@@ -73,6 +73,9 @@ done = False
 help_string = """
 Commands:
     n, e, s, w - to move in a direction specified
+    get/take [ITEM NAME] - pickup item
+    drop [ITEM NAME] - drop item
+    i/inventory - list all items in inventory
     quit - to quit the game
     help - to view these commands again
 """
