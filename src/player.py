@@ -20,7 +20,20 @@ class Player:
   def pickup_item(self, name):
     item = self.current_room.pop_item(name)
     if item:
-      self.__add_item__(item)
-      return item
+      return self.__add_item__(item)
+    else:
+      return False
+
+  def drop_item(self, name):
+    item = None
+    item_index = None
+    for idx, i in enumerate(self.inventory):
+      if i.name == name:
+        item = i
+        item_index = idx
+        break
+    if item:
+      self.current_room.push_item(item)
+      return self.__remove_item__(item_index)
     else:
       return False
