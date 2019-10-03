@@ -16,3 +16,11 @@ class Player:
     item = self.inventory.pop(idx)
     item.on_drop()
     return self.inventory
+
+  def pickup_item(self, name):
+    item = current_room.pop_item(name)
+    if item:
+      self.__add_item__(item)
+      return item
+    else:
+      return False
