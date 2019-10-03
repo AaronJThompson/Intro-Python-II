@@ -37,6 +37,10 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
+def next_room(dir, current_room):
+    direction = dir + "_to"
+    return getattr(current_room, direction)
+
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
